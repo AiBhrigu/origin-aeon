@@ -202,3 +202,19 @@ body::after {
     font-size: 14px;
     letter-spacing: 1px;
 }
+
+/* Scroll Reveal */
+.visible {
+    opacity: 1 !important;
+    transform: translateY(0px) !important;
+    filter: blur(0px) !important;
+}
+
+.section,
+.feature-card,
+.roadmap-item {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(6px);
+    transition: 0.7s ease, opacity 0.7s ease;
+}
