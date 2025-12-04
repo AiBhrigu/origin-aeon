@@ -1,87 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Origin Aeon — Core Engine for Living Worlds</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Origin Aeon — Core Engine for Living Worlds</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div id="bg-grid"></div>
 
-  <header class="hero">
-    <h1 class="title glow">ORIGIN AEON</h1>
-    <p class="subtitle">Core Engine for Living Worlds</p>
-    <a href="#access" class="cta-btn">Enter Early Access</a>
-  </header>
+    <!-- ================= HEADER ================= -->
+    <header class="hero">
+        <h1 class="title">ORIGIN AEON</h1>
+        <p class="subtitle">Core Engine for Living Worlds</p>
 
-  <section id="what" class="section">
-    <h2>What is Origin Aeon?</h2>
-    <p class="section-text">
-      Origin Aeon — минимальное ядро новой игровой системы. Архитектура,
-      основанная на ритме, энергии и эволюционной логике, создаёт мир,
-      который растёт вместе с игроком.
-    </p>
-  </section>
+        <a href="#access" class="cta-button">
+            Enter Early Access
+        </a>
+    </header>
 
-  <section id="core" class="section">
-    <h2>Core Engine</h2>
+    <!-- ================= WHAT IS ORIGIN AEON ================= -->
+    <section class="section">
+        <h2 class="section-title">What is Origin Aeon?</h2>
 
-    <div class="card"> 
-      <h3>Living Core</h3>
-      <p>Ядро реагирует на выбор игрока и формирует индивидуальный путь.</p>
-    </div>
+        <p class="section-text">
+            Origin Aeon — минимальное ядро новой игровой системы. Архитектура, основанная на ритме,
+            энергии и эволюционной логике, создаёт мир, который растёт вместе с игроком.
+        </p>
+    </section>
 
-    <div class="card"> 
-      <h3>Skill Growth Tree</h3>
-      <p>Рост без уровней. Прогресс строится на опыте и решениях.</p>
-    </div>
+    <!-- ================= CORE ENGINE ================= -->
+    <section class="section">
+        <h2 class="section-title">Core Engine</h2>
 
-    <div class="card"> 
-      <h3>World Generator</h3>
-      <p>Мир расширяется и адаптируется в реальном времени.</p>
-    </div>
-  </section>
+        <div class="feature-card">
+            <h3>Living Core</h3>
+            <p>Ядро реагирует на выбор игрока и формирует индивидуальный путь.</p>
+        </div>
 
-  <section id="loop" class="section">
-    <h2>Core Gameplay Loop</h2>
-    <div class="loop-line">
-      <span>Awaken</span> →
-      <span>Explore</span> →
-      <span>Adapt</span> →
-      <span>Evolve</span>
-    </div>
-  </section>
+        <div class="feature-card">
+            <h3>Skill Growth Tree</h3>
+            <p>Рост без уровней. Прогресс строится на опыте и решениях.</p>
+        </div>
 
-  <section id="roadmap" class="section">
-    <h2>Roadmap</h2>
-    <p class="section-text">Ступени развития проекта.</p>
+        <div class="feature-card">
+            <h3>World Generator</h3>
+            <p>Мир расширяется и адаптируется в реальном времени.</p>
+        </div>
+    </section>
 
-    <div class="roadmap-list">
-      <div class="roadmap-item">Core Engine</div>
-      <div class="roadmap-item">Skill Growth</div>
-      <div class="roadmap-item">New Galaxy</div>
-      <div class="roadmap-item">Player Identity</div>
-      <div class="roadmap-item">Inventory System</div>
-      <div class="roadmap-item">Wallet Connect</div>
-      <div class="roadmap-item">TGE</div>
-      <div class="roadmap-item">Listing</div>
-    </div>
-  </section>
+    <!-- ================= GAMEPLAY LOOP ================= -->
+    <section class="section">
+        <h2 class="section-title">Core Gameplay Loop</h2>
 
-  <section id="access" class="section access-block">
-    <h2>Enter Early Access</h2>
-    <p class="section-text">
-      Войдите в первую волну игроков, которая формирует новую систему.
-    </p>
-    <a href="#" class="cta-btn large">Join Now</a>
-  </section>
+        <div class="loop">
+            <span>Awaken</span>
+            <span class="arrow">→</span>
+            <span>Explore</span>
+            <span class="arrow">→</span>
+            <span>Adapt</span>
+            <span class="arrow">→</span>
+            <span>Evolve</span>
+        </div>
+    </section>
 
-  <footer>
-    © 2025 Origin Aeon · Fractal Lab
-  </footer>
+    <!-- ================= ROADMAP ================= -->
+    <section class="section" id="roadmap">
+        <h2 class="section-title">Roadmap</h2>
+        <p class="section-text">Ступени развития проекта.</p>
 
-  <script src="script.js"></script>
+        <div class="roadmap">
+            <div class="roadmap-item active">Core Engine</div>
+            <div class="roadmap-item active">Skill Growth</div>
+            <div class="roadmap-item">New Galaxy</div>
+            <div class="roadmap-item">Player Identity</div>
+            <div class="roadmap-item">Inventory System</div>
+            <div class="roadmap-item">Wallet Connect</div>
+            <div class="roadmap-item">TGE</div>
+            <div class="roadmap-item">Listing</div>
+        </div>
+    </section>
+
+    <!-- ================= ACCESS ================= -->
+    <section class="section access" id="access">
+        <h2 class="section-title">Enter Early Access</h2>
+
+        <p class="section-text">
+            Войдите в первую волну игроков, которая формирует новую систему.
+        </p>
+
+        <a class="cta-button" href="#">
+            Join Now
+        </a>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+        © 2025 Origin Aeon · Fractal Lab
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
