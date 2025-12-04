@@ -1,110 +1,149 @@
-/* ====== GLOBAL ====== */
+/* ==== GLOBAL ==== */
+
 body {
-    background: radial-gradient(circle at 50% 50%, #0b0b10 0%, #08080d 60%, #05050a 100%);
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
-    overflow-x: hidden;
+  margin: 0;
+  background: #09090f;
+  font-family: Inter, Arial, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
 }
 
-.section {
-    padding: 120px 0;
+/* Background Grid + Noise */
+#bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
 }
 
-.section h2 {
-    margin-bottom: 40px;
+/* ==== HERO ==== */
+
+.hero {
+  padding: 160px 20px 120px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-/* ====== GRID BACKGROUND (deepened by 3%) ====== */
-.grid-bg::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    opacity: 0.24;
-    z-index: -1;
+.title {
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: 2px;
 }
 
-/* ====== TITLE ====== */
-.hero-title {
-    font-size: 64px;
-    font-weight: 800;
-    color: #9db7ff;
-    text-shadow: 0 0 22px rgba(150,170,255,0.45);
-    margin-bottom: 20px;
+/* Soft breathing glow */
+.glow {
+  animation: breathe 4s ease-in-out infinite;
 }
 
-/* CTA BUTTON */
+@keyframes breathe {
+  0% { text-shadow: 0 0 22px rgba(120,150,255,0.4); }
+  50% { text-shadow: 0 0 42px rgba(150,170,255,0.7); }
+  100% { text-shadow: 0 0 22px rgba(120,150,255,0.4); }
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 20px;
+  opacity: 0.9;
+}
+
 .cta-btn {
-    background: linear-gradient(90deg, #7f63ff, #9b6dff);
-    padding: 16px 34px;
-    border-radius: 10px;
-    font-size: 18px;
-    color: #fff;
-    box-shadow: 0 0 22px rgba(150,120,255,0.25);
-    transition: 0.25s ease;
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 38px;
+  background: #7c5bfa;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 0 14px rgba(124,91,250,0.5);
 }
 
 .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 40px rgba(150,120,255,0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(124,91,250,0.8);
 }
 
-/* ====== CORE ENGINE CARDS (equalized spacing, deeper blur) ====== */
-.engine-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 18px;
-    padding: 32px 42px;
-    backdrop-filter: blur(18px);
-    margin-bottom: 46px; /* unified spacing */
-    box-shadow: 0 0 26px rgba(90, 70, 150, 0.12);
-    transition: 0.3s ease;
+/* ==== SECTIONS ==== */
+
+.section {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
-.engine-card:hover {
-    background: rgba(255, 255, 255, 0.075);
-    box-shadow: 0 0 32px rgba(110, 90, 170, 0.22);
+.section-text {
+  max-width: 720px;
+  margin: 14px auto 0;
+  opacity: 0.85;
+  font-size: 18px;
 }
 
-/* ====== LOOP SECTION ====== */
-.game-loop {
-    font-size: 27px;
-    letter-spacing: 1px;
-    margin-bottom: 60px;
+/* ==== CARDS ==== */
+
+.card {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 30px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(120,120,200,0.05);
+  backdrop-filter: blur(4px);
+  transition: 0.25s ease;
+  transform: translateY(0px);
 }
 
-.loop-arrow {
-    opacity: 0.7;
-    margin: 0 12px;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 40px rgba(150,120,255,0.15);
 }
 
-/* ====== ROADMAP ====== */
+/* ==== LOOP ==== */
+
+.loop-line {
+  margin-top: 30px;
+  font-size: 26px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+/* ==== ROADMAP ==== */
+
+.roadmap-list {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
 .roadmap-item {
-    background: rgba(255,255,255,0.04);
-    padding: 18px 32px;
-    border-radius: 12px;
-    margin-bottom: 24px;
-    font-size: 18px;
-    transition: 0.25s ease;
-}
-
-.roadmap-item.active {
-    background: rgba(130,110,255,0.22);
-    box-shadow: 0 0 22px rgba(140,110,255,0.28);
+  background: rgba(255,255,255,0.06);
+  padding: 18px;
+  margin: 10px 0;
+  border-radius: 12px;
+  transition: 0.25s;
 }
 
 .roadmap-item:hover {
-    background: rgba(140,110,255,0.16);
+  background: rgba(140,110,255,0.25);
+  box-shadow: 0 0 18px rgba(150,120,255,0.25);
 }
 
-/* FOOTER */
-.footer {
-    opacity: 0.65;
-    padding: 40px 0;
-    letter-spacing: 0.5px;
-    font-size: 15px;
+/* ==== ACCESS ==== */
+
+.access-block .large {
+  padding: 18px 50px;
+  font-size: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 40px;
+  opacity: 0.5;
 }
