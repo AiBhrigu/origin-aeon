@@ -1,149 +1,204 @@
-/* ==== GLOBAL ==== */
-
-body {
-  margin: 0;
-  background: #09090f;
-  font-family: Inter, Arial, sans-serif;
-  color: #fff;
-  overflow-x: hidden;
+/* ============================
+   GLOBAL RESET
+============================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Background Grid + Noise */
-#bg-grid {
-  position: fixed;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.3;
+html, body {
+    background: #050509;
+    color: #e4e4e4;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* ==== HERO ==== */
-
-.hero {
-  padding: 160px 20px 120px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+/* ============================
+   BACKGROUND GRID (SUBTLE)
+============================ */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.25;
+    z-index: -3;
 }
 
+/* Soft cosmic glow */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        rgba(120,120,255,0.10) 0%,
+        rgba(0,0,0,0.9) 60%
+    );
+    z-index: -2;
+}
+
+/* ============================
+   SECTIONS
+============================ */
+.section {
+    width: 90%;
+    max-width: 900px;
+    margin: 120px auto;
+    text-align: center;
+}
+
+/* ============================
+   TITLES & TEXT
+============================ */
 .title {
-  font-size: 64px;
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-/* Soft breathing glow */
-.glow {
-  animation: breathe 4s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0% { text-shadow: 0 0 22px rgba(120,150,255,0.4); }
-  50% { text-shadow: 0 0 42px rgba(150,170,255,0.7); }
-  100% { text-shadow: 0 0 22px rgba(120,150,255,0.4); }
+    font-size: 70px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 18px rgba(120,120,255,0.5);
 }
 
 .subtitle {
-  margin-top: 12px;
-  font-size: 20px;
-  opacity: 0.9;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-bottom: 40px;
 }
 
-.cta-btn {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 14px 38px;
-  background: #7c5bfa;
-  color: white;
-  border-radius: 10px;
-  font-size: 18px;
-  text-decoration: none;
-  transition: all 0.2s;
-  box-shadow: 0 0 14px rgba(124,91,250,0.5);
-}
-
-.cta-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 22px rgba(124,91,250,0.8);
-}
-
-/* ==== SECTIONS ==== */
-
-.section {
-  padding: 100px 20px;
-  text-align: center;
-  position: relative;
-  z-index: 2;
+.section-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .section-text {
-  max-width: 720px;
-  margin: 14px auto 0;
-  opacity: 0.85;
-  font-size: 18px;
+    font-size: 18px;
+    opacity: 0.78;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
 }
 
-/* ==== CARDS ==== */
-
-.card {
-  max-width: 720px;
-  margin: 40px auto;
-  padding: 30px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 18px;
-  box-shadow: 0 0 25px rgba(120,120,200,0.05);
-  backdrop-filter: blur(4px);
-  transition: 0.25s ease;
-  transform: translateY(0px);
+/* ============================
+   CTA BUTTON
+============================ */
+.cta-button {
+    display: inline-block;
+    padding: 15px 32px;
+    background: transparent;
+    border: 1px solid rgba(160,160,255,0.6);
+    color: #c8c8ff;
+    border-radius: 8px;
+    font-size: 18px;
+    margin-top: 25px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.25s ease;
+    backdrop-filter: blur(4px);
 }
 
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 40px rgba(150,120,255,0.15);
+.cta-button:hover {
+    border-color: rgba(200,200,255,0.9);
+    color: #ffffff;
+    box-shadow: 0 0 16px rgba(150,150,255,0.35);
+    transform: translateY(-2px);
 }
 
-/* ==== LOOP ==== */
-
-.loop-line {
-  margin-top: 30px;
-  font-size: 26px;
-  letter-spacing: 1px;
-  opacity: 0.9;
+/* ============================
+   HERO
+============================ */
+.hero {
+    padding-top: 140px;
+    padding-bottom: 120px;
+    text-align: center;
 }
 
-/* ==== ROADMAP ==== */
+/* ============================
+   FEATURE CARDS
+============================ */
+.feature-card {
+    padding: 28px;
+    border: 1px solid rgba(120,120,155,0.28);
+    background: rgba(255,255,255,0.03);
+    margin: 22px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    transition: 0.25s ease;
+    backdrop-filter: blur(6px);
+}
 
-.roadmap-list {
-  max-width: 600px;
-  margin: 40px auto;
+.feature-card:hover {
+    border-color: rgba(180,180,255,0.6);
+    box-shadow: 0 0 20px rgba(150,150,255,0.2);
+}
+
+/* ============================
+   GAMEPLAY LOOP
+============================ */
+.loop {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+    opacity: 0.85;
+}
+
+.arrow {
+    opacity: 0.6;
+}
+
+/* ============================
+   ROADMAP
+============================ */
+.roadmap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 14px;
+    margin-top: 25px;
 }
 
 .roadmap-item {
-  background: rgba(255,255,255,0.06);
-  padding: 18px;
-  margin: 10px 0;
-  border-radius: 12px;
-  transition: 0.25s;
+    padding: 14px;
+    border: 1px solid rgba(140,140,175,0.25);
+    border-radius: 10px;
+    font-size: 16px;
+    background: rgba(255,255,255,0.03);
+    transition: 0.25s ease;
+}
+
+.roadmap-item.active {
+    border-color: rgba(200,200,255,0.7);
+    box-shadow: 0 0 14px rgba(160,160,255,0.25);
 }
 
 .roadmap-item:hover {
-  background: rgba(140,110,255,0.25);
-  box-shadow: 0 0 18px rgba(150,120,255,0.25);
+    border-color: rgba(180,180,255,0.9);
+    background: rgba(255,255,255,0.05);
 }
 
-/* ==== ACCESS ==== */
-
-.access-block .large {
-  padding: 18px 50px;
-  font-size: 20px;
+/* ============================
+   ACCESS
+============================ */
+.access {
+    padding-bottom: 180px;
 }
 
-footer {
-  text-align: center;
-  padding: 40px;
-  opacity: 0.5;
+/* ============================
+   FOOTER
+============================ */
+.footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.5;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
