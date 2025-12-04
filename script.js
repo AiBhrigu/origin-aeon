@@ -1,10 +1,7 @@
-// Pulse flicker variation
-setInterval(() => {
-  const grid = document.getElementById("quantum-grid");
-  grid.style.opacity = 0.55 + Math.random() * 0.15;
-}, 3500);
+// Soft parallax grid (v1.3.1)
+document.addEventListener("mousemove", (e) => {
+    const x = (e.clientX / window.innerWidth - 0.5) * 6;
+    const y = (e.clientY / window.innerHeight - 0.5) * 6;
 
-// Gateway popup (placeholder)
-function openGateway() {
-  alert("Early Access Gateway Coming Soon");
-}
+    document.body.style.backgroundPosition = `${x}px ${y}px`;
+});
