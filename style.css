@@ -7,23 +7,22 @@ body {
     background: #05050b;
     overflow-x: hidden;
 
-    /* Helion Lite: живой фон */
+    /* Helion Grid Layer */
     background-image:
-        radial-gradient(circle at 50% 50%, rgba(120,110,255,0.10), rgba(0,0,0,0) 60%),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 100% 100%, 42px 42px, 42px 42px;
-    animation: grid-float 26s linear infinite;
+        radial-gradient(circle at 50% 50%, rgba(120,110,255,0.10), rgba(0,0,0,0) 58%),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    animation: gridFloat 34s linear infinite;
 }
 
-@keyframes grid-float {
+@keyframes gridFloat {
     0% { background-position: 0 0, 0 0, 0 0; }
-    100% { background-position: 0 0, 80px 80px, 80px 80px; }
+    100% { background-position: 0 0, 90px 90px, 90px 90px; }
 }
 
-/* Smooth fade for all sections */
 .section, .hero, .section-access {
-    animation: fadeIn 1.6s ease;
+    animation: fadeIn 1.5s ease;
 }
 
 @keyframes fadeIn {
@@ -43,39 +42,42 @@ body {
     font-weight: 800;
     letter-spacing: 2px;
 
-    /* Helion Lite glow */
     text-shadow:
         0 0 22px rgba(160,150,255,0.35),
-        0 0 48px rgba(120,100,255,0.25);
+        0 0 58px rgba(120,100,255,0.25),
+        0 0 90px rgba(120,100,255,0.15);
 }
 
 .subtitle {
     margin-top: 12px;
     font-size: 1.2rem;
-    opacity: 0.8;
+    opacity: 0.82;
 }
 
 
 /* === BUTTONS === */
 .cta-btn {
     display: inline-block;
-    margin-top: 32px;
     padding: 14px 32px;
+    margin-top: 32px;
     background: rgba(125,110,255,0.35);
     border-radius: 8px;
-    color: #fff;
     font-weight: 600;
+    color: #fff;
     text-decoration: none;
-    box-shadow: 0 0 14px rgba(130,120,255,0.3);
-    transition: 0.25s ease;
+
+    box-shadow:
+        0 0 14px rgba(130,120,255,0.35),
+        inset 0 0 6px rgba(220,200,255,0.1);
+    transition: 0.22s ease;
 }
 
 .cta-btn:hover {
-    opacity: 0.9;
-    box-shadow: 0 0 22px rgba(150,140,255,0.5);
+    opacity: 0.92;
+    box-shadow:
+        0 0 22px rgba(150,140,255,0.55),
+        inset 0 0 10px rgba(255,240,255,0.2);
 }
-
-.hero-btn { margin-top: 42px; }
 
 
 /* === SECTIONS === */
@@ -90,6 +92,7 @@ body {
     opacity: 0.85;
     line-height: 1.55;
 }
+
 
 /* === CARDS === */
 .card-grid {
@@ -107,16 +110,17 @@ body {
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px;
     backdrop-filter: blur(10px);
+
+    transform-style: preserve-3d;
     transition: 0.25s ease;
 
-    /* Helion Lite: depth glow */
     box-shadow:
         0 0 18px rgba(120,100,255,0.12),
         inset 0 0 12px rgba(120,100,255,0.08);
 }
 
 .card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-6px) scale(1.015);
     border-color: rgba(160,140,255,0.35);
     box-shadow:
         0 0 26px rgba(160,140,255,0.35),
@@ -127,8 +131,8 @@ body {
 /* === LOOP === */
 .loop {
     font-size: 1.3rem;
-    margin-top: 12px;
     opacity: 0.85;
+    margin-top: 12px;
 }
 
 
@@ -147,12 +151,17 @@ body {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
     color: #fff;
+    transition: 0.25s ease;
 }
 
 .active {
     background: rgba(130,110,255,0.25);
     border-color: rgba(160,140,255,0.4);
     box-shadow: 0 0 20px rgba(150,130,255,0.4);
+}
+
+.roadmap-btn:hover {
+    box-shadow: 0 0 14px rgba(150,150,255,0.25);
 }
 
 
@@ -169,7 +178,6 @@ body {
 .section-access p {
     max-width: 620px;
     margin: 20px auto 0;
-    line-height: 1.55;
 }
 
 .access-btn { margin-top: 34px; }
@@ -177,8 +185,10 @@ body {
 
 /* === FOOTER === */
 footer {
-    padding: 40px 0;
     text-align: center;
+    padding: 40px 0;
     opacity: 0.55;
     font-size: 0.9rem;
+
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.25));
 }
