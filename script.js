@@ -1,31 +1,23 @@
-// Smooth scroll for anchors
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        const target = document.querySelector(this.getAttribute("href"));
-        if (!target) return;
-        e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth" });
+/* === Helion Parallax (Soft) === */
+document.addEventListener("scroll", () => {
+    const sc = window.scrollY;
+    const nebula = document.getElementById("nebula");
+    nebula.style.transform = `translateY(${sc * 0.03}px)`;
+});
+
+/* === Card Micro-Tilt === */
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+        const r = card.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+        const tiltX = (y - r.height / 2) / 30;
+        const tiltY = (x - r.width / 2) / -30;
+
+        card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "rotateX(0deg) rotateY(0deg)";
     });
 });
-
-
-// === Helion Lite: Parallax Gravity ===
-const parallaxStrength = 0.035;
-
-window.addEventListener("scroll", () => {
-    const sc = window.scrollY;
-    document.body.style.backgroundPositionY = `-${sc * parallaxStrength}px`;
-});
-
-
-// === Helion Lite: Ambient Drift (micro motion) ===
-let drift = 0;
-function animateDrift() {
-    drift += 0.00045;
-
-    document.body.style.backgroundPositionX =
-        `${Math.sin(drift) * 18}px`;
-
-    requestAnimationFrame(animateDrift);
-}
-animateDrift();
