@@ -1,208 +1,151 @@
-/* =======================================
-   ORIGIN AEON v1.5 — GAME MODE
-   Premium Depth Layer + Glow System
-======================================= */
-
-/* ---------- RESET ---------- */
-* {
+/* === GLOBAL === */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background: #05050b;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+    color: #fff;
 }
 
-html, body {
-    background: #050509;
-    color: #e4e4e4;
-    font-family: "Inter", sans-serif;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
 }
 
-/* =======================================
-   BACKGROUND LAYERS (3D DEPTH FIELD)
-======================================= */
-
-#bg-layer-1,
-#bg-layer-2,
-#bg-layer-3 {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -10;
-}
-
-/* GRID LAYER */
-#bg-layer-1 {
-    background-image:
-        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-    background-size: 28px 28px;
-    opacity: 0.25;
-}
-
-/* COSMIC GLOW */
-#bg-layer-2 {
-    background: radial-gradient(circle at 50% 40%,
-        rgba(130,130,255,0.15) 0%,
-        rgba(0,0,0,0.9) 60%);
-    z-index: -9;
-}
-
-/* PARTICLES */
-#bg-layer-3 {
-    background-image: radial-gradient(rgba(255,255,255,0.12) 1px, transparent 1px);
-    background-size: 3px 3px;
-    opacity: 0.12;
-    z-index: -8;
-}
-
-/* =======================================
-   SECTIONS
-======================================= */
-.section {
-    width: 90%;
-    max-width: 900px;
-    margin: 140px auto;
+/* === HERO === */
+.hero {
+    padding: 160px 20px 140px;
     text-align: center;
-
-    opacity: 0;
-    transform: translateY(20px);
-    filter: blur(6px);
-    transition: 0.9s ease;
 }
 
-.section.visible {
-    opacity: 1;
-    transform: translateY(0px);
-    filter: blur(0px);
-}
-
-/* =======================================
-   TITLES
-======================================= */
-.title {
-    font-size: 80px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #ffffff;
-    text-shadow: 0 0 24px rgba(140,140,255,0.45);
-    margin-bottom: 20px;
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 0 25px rgba(180,180,255,0.35);
 }
 
 .subtitle {
-    font-size: 22px;
-    opacity: 0.7;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    opacity: 0.75;
 }
 
-.section-title {
-    font-size: 38px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 18px;
-}
-
-/* =======================================
-   CTA BUTTON
-======================================= */
-.cta-button {
+.cta-btn {
     display: inline-block;
-    padding: 15px 34px;
-    border: 1px solid rgba(160,160,255,0.6);
-    color: #c8c8ff;
-    border-radius: 10px;
-    font-size: 18px;
-    letter-spacing: 1px;
+    margin-top: 30px;
+    padding: 14px 32px;
+    background: #6c5dfd;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
     text-decoration: none;
-    transition: 0.25s ease;
-    backdrop-filter: blur(5px);
-    position: relative;
-    overflow: hidden;
+    transition: 0.2s ease;
 }
 
-.cta-button:hover {
-    border-color: #ffffff;
-    color: #ffffff;
-    box-shadow: 0 0 22px rgba(160,160,255,0.45);
-    transform: translateY(-2px);
+.cta-btn:hover {
+    opacity: 0.85;
 }
 
-/* =======================================
-   FEATURE CARDS
-======================================= */
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 22px;
+.hero-btn {
     margin-top: 40px;
 }
 
-.feature-card {
-    padding: 26px;
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(140,140,165,0.3);
-    border-radius: 12px;
+/* === SECTIONS === */
+.section {
+    padding: 120px 20px 60px;
     text-align: center;
-    transition: 0.35s ease;
-    backdrop-filter: blur(5px);
 }
 
-.feature-card:hover {
-    border-color: rgba(200,200,255,0.7);
-    box-shadow: 0 0 24px rgba(160,160,255,0.3);
-    transform: translateY(-4px) scale(1.02);
+.desc {
+    max-width: 720px;
+    margin: 16px auto 0;
+    opacity: 0.85;
+    line-height: 1.55;
 }
 
-/* =======================================
-   GAMEPLAY LOOP
-======================================= */
-.loop {
-    margin-top: 20px;
-    font-size: 26px;
-    opacity: 0.9;
+/* === CARDS === */
+.card-grid {
     display: flex;
     justify-content: center;
-    gap: 14px;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
 
-.arrow { opacity: 0.55; }
-
-/* =======================================
-   ROADMAP
-======================================= */
-.roadmap {
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 16px;
-}
-
-.roadmap-item {
-    padding: 16px;
-    border-radius: 12px;
-    border: 1px solid rgba(140,140,175,0.3);
+.card {
+    width: 300px;
     background: rgba(255,255,255,0.03);
-    transition: 0.3s ease;
-}
-
-.roadmap-item.active {
-    border-color: rgba(200,200,255,0.9);
-    box-shadow: 0 0 20px rgba(160,160,255,0.35);
-}
-
-.roadmap-item:hover {
-    background: rgba(255,255,255,0.06);
-    border-color: #fff;
-    transform: translateY(-3px);
-}
-
-/* =======================================
-   FOOTER
-======================================= */
-.footer {
-    margin-top: 140px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 32px;
     text-align: center;
-    opacity: 0.5;
-    padding-bottom: 60px;
-    font-size: 14px;
+    backdrop-filter: blur(10px);
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.15);
+}
+
+/* === LOOP === */
+.loop {
+    font-size: 1.3rem;
+    margin-top: 12px;
+    opacity: 0.8;
+}
+
+/* === ROADMAP === */
+.roadmap-grid {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.roadmap-btn {
+    padding: 14px 28px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    color: #fff;
+    cursor: default;
+}
+
+.active {
+    background: rgba(120,100,255,0.22);
+    border-color: rgba(150,120,255,0.4);
+    box-shadow: 0 0 18px rgba(150,120,255,0.3);
+}
+
+/* === EARLY ACCESS === */
+.section-access {
+    padding: 160px 20px 160px;
+    text-align: center;
+
+    /* стабилизация кнопки */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-access p {
+    max-width: 620px;
+    margin: 16px auto 0;
+    line-height: 1.55;
+}
+
+.access-btn {
+    margin-top: 32px;
+}
+
+/* === FOOTER === */
+footer {
+    text-align: center;
+    opacity: 0.6;
+    padding: 40px 0;
+    font-size: 0.9rem;
 }
