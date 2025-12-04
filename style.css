@@ -1,106 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
-
-* {
+/* === GLOBAL === */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background: #05050b;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
 }
 
-body {
-    font-family: Inter, sans-serif;
-    background: radial-gradient(circle at 50% 30%, #111018, #050509 70%);
-    color: #ffffff;
-    overflow-x: hidden;
+h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
 }
 
-/* === Mystic Nebula Layer === */
-#nebula {
-    position: fixed;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
-    opacity: 0.08;
-    filter: blur(12px);
-    z-index: -2;
-    animation: nebulaFlow 20s infinite alternate ease-in-out;
-}
-
-@keyframes nebulaFlow {
-    0% { transform: scale(1) translateY(0px); }
-    100% { transform: scale(1.05) translateY(10px); }
-}
-
-/* === Smooth Scroll === */
-html { scroll-behavior: smooth; }
-
-/* === Typography === */
-.title {
-    font-size: 4rem;
-    letter-spacing: 0.1em;
+/* === HERO === */
+.hero {
+    padding: 160px 20px 150px;
     text-align: center;
-    margin-top: 120px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-shadow: 0 0 24px rgba(180,180,255,0.33);
 }
 
 .subtitle {
+    margin-top: 12px;
+    font-size: 1.2rem;
+    opacity: 0.75;
+}
+
+.cta-btn {
+    display: inline-block;
+    margin-top: 32px;
+    padding: 14px 32px;
+    background: #685aff;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.25s ease;
+}
+
+.cta-btn:hover {
+    opacity: 0.85;
+}
+
+.hero-btn {
+    margin-top: 42px;
+}
+
+/* === SECTION === */
+.section {
+    padding: 120px 20px 60px;
     text-align: center;
-    margin-top: 20px;
-    opacity: 0.7;
 }
 
-/* === Glow === */
-.glow {
-    animation: glowPulse 4s infinite ease-in-out;
+.desc {
+    max-width: 720px;
+    margin: 18px auto;
+    opacity: 0.85;
+    line-height: 1.55;
 }
 
-@keyframes glowPulse {
-    0% { text-shadow: 0 0 12px #7b5df4; }
-    100% { text-shadow: 0 0 24px #9d7bff; }
-}
-
-/* === Cards === */
-.section-cards {
-    margin-top: 100px;
+/* === CARDS === */
+.card-grid {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
-    gap: 30px;
-    padding: 40px;
+    gap: 32px;
     flex-wrap: wrap;
 }
 
 .card {
-    background: rgba(255,255,255,0.06);
-    padding: 30px;
-    width: 280px;
+    width: 300px;
+    padding: 32px;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px;
-    backdrop-filter: blur(8px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    transition: 0.25s ease;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 24px rgba(115, 95, 255, 0.4);
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.15);
 }
 
-/* === Access Section === */
+/* === LOOP === */
+.loop {
+    margin-top: 12px;
+    font-size: 1.3rem;
+    opacity: 0.8;
+}
+
+/* === ROADMAP === */
+.roadmap-grid {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.roadmap-btn {
+    padding: 14px 28px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: #fff;
+    cursor: default;
+}
+
+.active {
+    background: rgba(120,100,255,0.22);
+    border-color: rgba(150,120,255,0.4);
+    box-shadow: 0 0 18px rgba(150,120,255,0.3);
+}
+
+/* === ACCESS === */
 .section-access {
-    min-height: 60vh;   /* FIX кнопки */
+    padding: 160px 20px 150px;
     text-align: center;
-    padding: 120px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-access p {
+    max-width: 620px;
+    margin: 20px auto 0;
+    line-height: 1.55;
 }
 
 .access-btn {
-    margin-top: 30px;
-    padding: 16px 32px;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #7b5df4, #9f87ff);
-    border: none;
-    color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    margin-top: 34px;
 }
 
-.access-btn:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 24px rgba(155, 135, 255, 0.6);
+/* === FOOTER === */
+footer {
+    padding: 40px 0;
+    text-align: center;
+    opacity: 0.55;
+    font-size: 0.9rem;
 }
