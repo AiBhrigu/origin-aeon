@@ -1,96 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Origin Aeon</title>
-  <link rel="stylesheet" href="quantum.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Origin Aeon — Core Engine for Living Worlds</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
+<body class="grid-bg">
 
-  <!-- QUANTUM GRID BACKGROUND -->
-  <div id="quantum-grid"></div>
+    <!-- HERO -->
+    <section class="section hero" id="home">
+        <h1 class="hero-title" align="center">ORIGIN AEON</h1>
+        <p align="center" style="opacity:0.75; font-size:20px;">
+            Core Engine for Living Worlds
+        </p>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <h1 class="hero-title">ORIGIN AEON</h1>
-    <p class="hero-sub">A Living Engine for Player-Driven Worlds</p>
-    <button class="cta" onclick="openGateway()">ENTER EARLY ACCESS</button>
-  </header>
+        <div style="text-align:center; margin-top:40px;">
+            <a href="#access" class="cta-btn">Enter Early Access</a>
+        </div>
+    </section>
 
-  <!-- WHAT IS AEON -->
-  <section class="section intro">
-    <h2>What is Origin Aeon?</h2>
-    <p>
-      A dynamic core engine that evolves with player choices, generating
-      adaptive worlds shaped by rhythm, energy and progression.
-    </p>
-  </section>
+    <!-- WHAT IS ORIGIN AEON -->
+    <section class="section" id="about">
+        <h2 align="center">What is Origin Aeon?</h2>
 
-  <!-- CORE ENGINE -->
-  <section class="section engine">
-    <h2>Core Engine Architecture</h2>
+        <p align="center" style="max-width:720px; margin:0 auto; opacity:0.85; font-size:19px;">
+            Origin Aeon — минимальное ядро новой игровой системы. 
+            Архитектура, основанная на ритме, энергии и эволюционной логике, 
+            создаёт мир, который растёт вместе с игроком.
+        </p>
+    </section>
 
-    <div class="engine-grid">
-      <div class="engine-card">Living Core<br><span>Evolving logic loops</span></div>
-      <div class="engine-card">Adaptive Progression<br><span>Energy-based growth</span></div>
-      <div class="engine-card">World Generator<br><span>Expanding environments</span></div>
-    </div>
-  </section>
+    <!-- CORE ENGINE -->
+    <section class="section" id="engine">
+        <h2 align="center">Core Engine</h2>
 
-  <!-- GAMEPLAY LOOP -->
-  <section class="section loop">
-    <h2>Gameplay Loop</h2>
-    <div class="loop-chain">
-      <span class="node">Awaken</span>
-      <span class="arrow">➜</span>
-      <span class="node">Explore</span>
-      <span class="arrow">➜</span>
-      <span class="node">Adapt</span>
-      <span class="arrow">➜</span>
-      <span class="node">Evolve</span>
-    </div>
-  </section>
+        <div style="max-width:900px; margin:60px auto 0 auto;">
 
-  <!-- ROADMAP -->
-  <section class="section roadmap">
-    <h2>Roadmap</h2>
+            <div class="engine-card">
+                <h3>Living Core</h3>
+                <p>Ядро реагирует на выбор игрока и формирует индивидуальный путь.</p>
+            </div>
 
-    <div class="road-wrapper">
-      <div class="step active">
-        <div class="dot"></div>
-        <p>Engine Prototype</p>
-      </div>
+            <div class="engine-card">
+                <h3>Skill Growth Tree</h3>
+                <p>Рост без уровней. Прогресс строится на опыте и решениях.</p>
+            </div>
 
-      <div class="step">
-        <div class="dot"></div>
-        <p>Live Test Modules</p>
-      </div>
+            <div class="engine-card">
+                <h3>World Generator</h3>
+                <p>Мир расширяется и адаптируется в реальном времени.</p>
+            </div>
 
-      <div class="step">
-        <div class="dot"></div>
-        <p>World Expansion</p>
-      </div>
+        </div>
+    </section>
 
-      <div class="step">
-        <div class="dot"></div>
-        <p>Open Access</p>
-      </div>
-    </div>
-  </section>
+    <!-- GAMEPLAY LOOP -->
+    <section class="section" id="loop">
+        <h2 align="center">Core Gameplay Loop</h2>
 
-  <!-- GATEWAY -->
-  <section class="section gateway">
-    <h2>Join Early Access</h2>
-    <button class="cta" onclick="openGateway()">REQUEST ACCESS</button>
-  </section>
+        <p class="game-loop" align="center">
+            Awaken 
+            <span class="loop-arrow">→</span>
+            Explore 
+            <span class="loop-arrow">→</span>
+            Adapt 
+            <span class="loop-arrow">→</span>
+            Evolve
+        </p>
+    </section>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Origin Aeon • Fractal Lab
-  </footer>
+    <!-- ROADMAP -->
+    <section class="section" id="roadmap">
+        <h2 align="center">Roadmap</h2>
 
-  <script src="quantum.js"></script>
+        <p align="center" style="opacity:0.7; margin-bottom:48px;">
+            Ступени развития проекта.
+        </p>
+
+        <div style="max-width:600px; margin:0 auto;">
+
+            <div class="roadmap-item active">Core Engine</div>
+            <div class="roadmap-item active">Skill Growth</div>
+
+            <div class="roadmap-item">New Galaxy</div>
+            <div class="roadmap-item">Player Identity</div>
+            <div class="roadmap-item">Inventory System</div>
+            <div class="roadmap-item">Wallet Connect</div>
+            <div class="roadmap-item">TGE</div>
+            <div class="roadmap-item">Listing</div>
+
+        </div>
+    </section>
+
+    <!-- ACCESS -->
+    <section class="section" id="access">
+        <h2 align="center">Enter Early Access</h2>
+
+        <p align="center" style="opacity:0.75;">
+            Войдите в первую волну игроков, которая формирует новую систему.
+        </p>
+
+        <div style="text-align:center; margin-top:40px;">
+            <a href="#" class="cta-btn">Join Now</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" align="center">
+        © 2025 Origin Aeon · Fractal Lab
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
