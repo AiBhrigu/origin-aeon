@@ -3,18 +3,18 @@ body {
     margin: 0;
     padding: 0;
     background: #05050b;
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
     color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
 }
 
-h1, h2, h3 {
+h1, h2, h3, p {
     margin: 0;
     padding: 0;
 }
 
 /* === HERO === */
 .hero {
-    padding: 160px 20px 140px;
+    padding: 160px 20px 150px;
     text-align: center;
 }
 
@@ -22,25 +22,25 @@ h1, h2, h3 {
     font-size: 4rem;
     font-weight: 800;
     letter-spacing: 2px;
-    text-shadow: 0 0 25px rgba(180,180,255,0.35);
+    text-shadow: 0 0 24px rgba(180,180,255,0.33);
 }
 
 .subtitle {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 1.2rem;
     opacity: 0.75;
 }
 
 .cta-btn {
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 32px;
     padding: 14px 32px;
-    background: #6c5dfd;
+    background: #685aff;
     border-radius: 8px;
     color: #fff;
     font-weight: 600;
     text-decoration: none;
-    transition: 0.2s ease;
+    transition: 0.25s ease;
 }
 
 .cta-btn:hover {
@@ -48,10 +48,10 @@ h1, h2, h3 {
 }
 
 .hero-btn {
-    margin-top: 40px;
+    margin-top: 42px;
 }
 
-/* === SECTIONS === */
+/* === SECTION === */
 .section {
     padding: 120px 20px 60px;
     text-align: center;
@@ -59,27 +59,26 @@ h1, h2, h3 {
 
 .desc {
     max-width: 720px;
-    margin: 16px auto 0;
+    margin: 18px auto;
     opacity: 0.85;
     line-height: 1.55;
 }
 
 /* === CARDS === */
 .card-grid {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     gap: 32px;
     flex-wrap: wrap;
-    margin-top: 50px;
 }
 
 .card {
     width: 300px;
-    background: rgba(255,255,255,0.03);
+    padding: 32px;
+    background: rgba(255,255,255,0.035);
     border: 1px solid rgba(255,255,255,0.06);
     border-radius: 16px;
-    padding: 32px;
-    text-align: center;
     backdrop-filter: blur(10px);
     transition: 0.25s ease;
 }
@@ -91,8 +90,8 @@ h1, h2, h3 {
 
 /* === LOOP === */
 .loop {
-    font-size: 1.3rem;
     margin-top: 12px;
+    font-size: 1.3rem;
     opacity: 0.8;
 }
 
@@ -107,9 +106,9 @@ h1, h2, h3 {
 
 .roadmap-btn {
     padding: 14px 28px;
+    border-radius: 10px;
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 10px;
     color: #fff;
     cursor: default;
 }
@@ -120,32 +119,30 @@ h1, h2, h3 {
     box-shadow: 0 0 18px rgba(150,120,255,0.3);
 }
 
-/* === EARLY ACCESS === */
+/* === ACCESS === */
 .section-access {
-    padding: 160px 20px 160px;
+    padding: 160px 20px 150px;
     text-align: center;
 
-    /* стабилизация кнопки */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .section-access p {
     max-width: 620px;
-    margin: 16px auto 0;
+    margin: 20px auto 0;
     line-height: 1.55;
 }
 
 .access-btn {
-    margin-top: 32px;
+    margin-top: 34px;
 }
 
 /* === FOOTER === */
 footer {
-    text-align: center;
-    opacity: 0.6;
     padding: 40px 0;
+    text-align: center;
+    opacity: 0.55;
     font-size: 0.9rem;
 }
