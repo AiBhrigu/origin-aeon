@@ -1,10 +1,9 @@
-// Smooth scroll for internal anchors
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
         const target = document.querySelector(this.getAttribute("href"));
         if (!target) return;
-
         e.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
+        target.scrollIntoView({ behavior: "smooth" });
     });
 });
