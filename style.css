@@ -1,75 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background: #050510;
-  color: #eaeaff;
+    font-family: Inter, sans-serif;
+    background: radial-gradient(circle at 50% 30%, #111018, #050509 70%);
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* HERO */
-.hero {
-  text-align: center;
-  padding: 120px 20px 80px;
-  background: radial-gradient(circle at center, #2d1b4d 0%, #050510 70%);
+/* === Mystic Nebula Layer === */
+#nebula {
+    position: fixed;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    opacity: 0.08;
+    filter: blur(12px);
+    z-index: -2;
+    animation: nebulaFlow 20s infinite alternate ease-in-out;
 }
+
+@keyframes nebulaFlow {
+    0% { transform: scale(1) translateY(0px); }
+    100% { transform: scale(1.05) translateY(10px); }
+}
+
+/* === Smooth Scroll === */
+html { scroll-behavior: smooth; }
+
+/* === Typography === */
 .title {
-  font-size: 56px;
-  letter-spacing: 4px;
-  font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 120px;
 }
+
 .subtitle {
-  font-size: 18px;
-  margin-top: 10px;
-  opacity: 0.8;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0.7;
 }
 
-/* GRID */
-.token-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-  padding: 40px 40px 20px;
+/* === Glow === */
+.glow {
+    animation: glowPulse 4s infinite ease-in-out;
 }
 
-.token-card {
-  background: rgba(30, 20, 50, 0.45);
-  border: 1px solid rgba(170, 130, 255, 0.3);
-  padding: 24px;
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  box-shadow: 0 0 20px rgba(130, 70, 255, 0.1);
-}
-.token-card:hover {
-  box-shadow: 0 0 40px rgba(160, 90, 255, 0.5);
+@keyframes glowPulse {
+    0% { text-shadow: 0 0 12px #7b5df4; }
+    100% { text-shadow: 0 0 24px #9d7bff; }
 }
 
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 60px 20px;
-}
-.cta-btn {
-  display: inline-block;
-  padding: 16px 40px;
-  background: linear-gradient(135deg,#6d3bff,#9b5df5);
-  color: #fff;
-  border-radius: 40px;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(130, 90, 255, 0.4);
-  transition: 0.25s;
-}
-.cta-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 0 30px rgba(140, 50, 255, 0.8);
+/* === Cards === */
+.section-cards {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    flex-wrap: wrap;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px 0 40px;
-  opacity: 0.5;
-  font-size: 14px;
+.card {
+    background: rgba(255,255,255,0.06);
+    padding: 30px;
+    width: 280px;
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 24px rgba(115, 95, 255, 0.4);
+}
+
+/* === Access Section === */
+.section-access {
+    min-height: 60vh;   /* FIX кнопки */
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.access-btn {
+    margin-top: 30px;
+    padding: 16px 32px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7b5df4, #9f87ff);
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.access-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px rgba(155, 135, 255, 0.6);
 }
