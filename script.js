@@ -1,7 +1,14 @@
-// Soft parallax grid (v1.3.1)
-document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 6;
-    const y = (e.clientY / window.innerHeight - 0.5) * 6;
-
-    document.body.style.backgroundPosition = `${x}px ${y}px`;
+// Subtle parallax effect on scroll for section blocks
+document.addEventListener("scroll", () => {
+  const scrolled = window.scrollY;
+  document.querySelectorAll(".card, .roadmap-item").forEach((el, i) => {
+    el.style.transform = `translateY(${Math.sin(scrolled * 0.002 + i) * 3}px)`;
+  });
 });
+
+// Micro-noise flicker
+setInterval(() => {
+  const grid = document.getElementById("bg-grid");
+  const v = 0.3 + Math.random() * 0.02;
+  grid.style.opacity = v;
+}, 300);
