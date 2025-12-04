@@ -1,21 +1,16 @@
-/* === Nebula Parallax === */
-document.addEventListener("scroll", () => {
-    const sc = window.scrollY;
-    nebula.style.transform = `translateY(${sc * 0.03}px)`;
-});
-
 /* === Quantum Section Reveal === */
-const sections = document.querySelectorAll(".quantum-section");
+const qSections = document.querySelectorAll(".quantum-section");
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add("visible");
     });
 });
-sections.forEach(sec => observer.observe(sec));
+qSections.forEach(sec => observer.observe(sec));
 
-/* === Tech Grid Renderer === */
+/* === Tech Grid Canvas Renderer === */
 const canvas = document.getElementById("gridCanvas");
 const ctx = canvas.getContext("2d");
+
 function resize() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -25,7 +20,7 @@ window.addEventListener("resize", resize);
 
 function drawGrid() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = "rgba(180,160,255,0.18)";
+    ctx.strokeStyle = "rgba(130,110,255,0.25)"; /* фиолетово-синий лёгкий неон */
     ctx.lineWidth = 1;
 
     const step = 60;
@@ -35,6 +30,7 @@ function drawGrid() {
         ctx.lineTo(x, canvas.height);
         ctx.stroke();
     }
+
     for (let y = 0; y < canvas.height; y += step) {
         ctx.beginPath();
         ctx.moveTo(0, y);
@@ -42,11 +38,23 @@ function drawGrid() {
         ctx.stroke();
     }
 }
-setInterval(drawGrid, 40);
+setInterval(drawGrid, 70);
 
-/* === Axis Drift Lightfield === */
-document.addEventListener("mousemove", (e) => {
-    const x = (e.clientX / window.innerWidth - 0.5) * 6;
-    const y = (e.clientY / window.innerHeight - 0.5) * 6;
-    canvas.style.transform = `translate(${x}px, ${y}px)`;
+/* === Game Tilt 3.0 === */
+document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("mousemove", e => {
+        const r = card.getBoundingClientRect();
+        const x = e.clientX - r.left;
+        const y = e.clientY - r.top;
+
+        const tiltX = (y - r.height / 2) / 20;
+        const tiltY = (x - r.width / 2) / -20;
+
+        card.style.transform =
+            `translateY(-8px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "rotateX(0deg) rotateY(0deg)";
+    });
 });
